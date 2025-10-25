@@ -1,0 +1,169 @@
+/* 🌸 Background */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 20%, #ffd6e8, transparent 40%),
+              radial-gradient(circle at 80% 30%, #b9e6ff, transparent 40%),
+              radial-gradient(circle at 50% 80%, #f9d5ff, transparent 40%),
+              radial-gradient(circle at 90% 70%, #cce8ff, transparent 40%);
+  animation: floatBG 20s infinite alternate ease-in-out;
+  filter: blur(80px);
+  z-index: 0;
+}
+@keyframes floatBG {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-10%, -10%) scale(1.1); }
+}
+
+/* 🧁 Quiz Card */
+.quiz-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 8vh;
+  border-radius: 25px;
+  padding: 2em 2.5em;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  color: #ff66b2;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
+
+/* 🧮 Dashboard */
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #444;
+  font-weight: 600;
+  background: #f8f0ff;
+  padding: 0.5em 1em;
+  border-radius: 15px;
+  box-shadow: inset 0 0 8px rgba(255,192,203,0.3);
+}
+
+/* ⏱ Timer */
+.timer-container {
+  font-size: 1.1em;
+  background: rgba(255,240,250,0.8);
+  padding: 0.6em;
+  border-radius: 15px;
+  margin-bottom: 1em;
+  color: #444;
+}
+#timer {
+  font-weight: bold;
+  color: #ff1493;
+}
+.time-warning { color: #ff4444; }
+
+/* 🎀 Options */
+.option {
+  display: block;
+  background: linear-gradient(135deg, #ffe6f2, #e3f3ff);
+  border: none;
+  margin: 0.5em 0;
+  padding: 0.9em;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.option:hover {
+  background: linear-gradient(135deg, #ffd1dc, #b9e6ff);
+  transform: scale(1.05);
+}
+.option.correct { background: #a4f5c9 !important; }
+.option.wrong { background: #f5a4a4 !important; }
+
+/* 💕 Buttons */
+.btn {
+  margin-top: 1.5em;
+  padding: 0.8em 1.5em;
+  background: linear-gradient(135deg, #ff9ae2, #6ec6ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 15px rgba(255, 182, 193, 0.7);
+}
+.hidden { display: none; }
+.result { margin-top: 1em; font-weight: bold; color: #333; }
+
+/* 📊 Result Screen */
+.result-screen {
+  position: relative;
+  z-index: 20;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  width: 90%;
+  max-width: 420px;
+  margin: auto;
+  margin-top: 8vh;
+  border-radius: 25px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(255,182,193,0.4);
+  animation: fadeIn 0.8s ease;
+}
+.graph-container { margin-top: 20px; }
+
+/* 🎉 Appreciation message */
+.appreciation {
+  margin-top: 1em;
+  font-size: 1.3em;
+  color: #ff69b4;
+  animation: bounce 1s ease infinite alternate;
+}
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+/* ⭐ Rating stars */
+.rating {
+  margin-top: 2em;
+}
+.stars span {
+  font-size: 2em;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.stars span.active,
+.stars span:hover,
+.stars span:hover ~ span {
+  color: gold;
+}
+#rating-message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}

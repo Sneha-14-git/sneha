@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 Cute Interactive Quiz 💙</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="background"></div>
+
+  <!-- Quiz Container -->
+  <div class="quiz-container" id="quiz">
+    <h1>💖 Cute Quiz Challenge 💙</h1>
+
+    <div class="dashboard">
+      <span>Attempted: <span id="attempted">0</span></span>
+      <span>Remaining: <span id="remaining">0</span></span>
+    </div>
+
+    <div class="timer-container">
+      ⏰ Time left: <span id="timer">15</span> seconds
+    </div>
+
+    <div id="question-container">
+      <p id="question">Question text</p>
+      <div id="options" class="options"></div>
+    </div>
+
+    <button id="next-btn" class="btn hidden">Next ➜</button>
+    <div id="result" class="result hidden"></div>
+  </div>
+
+  <!-- Result / Graph Section -->
+  <div class="result-screen hidden" id="result-screen">
+    <h2 id="final-message"></h2>
+    <div class="graph-container">
+      <canvas id="scoreGraph" width="300" height="180"></canvas>
+    </div>
+    <div id="appreciation" class="appreciation"></div>
+
+    <div class="rating">
+      <p>⭐ How would you rate this quiz?</p>
+      <div id="stars" class="stars">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+      </div>
+      <p id="rating-message"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
